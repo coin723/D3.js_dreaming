@@ -1,0 +1,27 @@
+<!-- 꿈꾸는 데이터 디자이너 실습자료입니다 !-->
+<!DOCTYPE html> 
+<!-- 문서 유형 선언. Html문서라고 컴퓨터에 말해줍니다 !-->
+<html> 
+<head> <!-- html의 문서정보 선언 !-->
+	<meta charset="UTF-8"> <!-- 인코딩 설정 !-->
+	<title>꿈데디 d3.js 1주차</title>
+	<!-- HTML의 스타일을 설정합니다. !-->
+	<style>
+		body {
+			background-color:#30BBC3; 	/* 요소 전체의 배경색. 구분을 위해서 설정했습니다. */
+		} 
+
+		svg {
+			background-color:#ffffff; 	/* svg의 배경색 */
+		}
+	</style>
+</head>
+<body> <!-- script, svg 등 대부분 요소를 body에 작성 !-->
+	<svg width="500px" height="500px"> <!-- 요소를 그릴 svg 영역 설정 !-->
+	    <!-- 원=circle. fill=원의 색상, opacity=투명도 stroke=테두리 색상 !-->
+		<circle cx="100" cy="100" r="80" fill="#E85349" opacity="0.9" stroke="#333333"/>
+		<circle cx="200" cy="100" r="80" fill="#00A178" opacity="0.7" stroke="#333333"/>
+		<circle cx="300" cy="100" r="80" fill="#2C656B" opacity="0.2" stroke="#333333"/>
+	</svg>  
+</body>
+</html>

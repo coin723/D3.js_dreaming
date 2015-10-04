@@ -1,0 +1,37 @@
+<!-- 20151004 꿈꾸는 데이터 디자이너 실습자료입니다 !-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>데이터 문장 만들기</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> <!-- d3 링크 -->
+</head>
+<body> 
+	<!-- <script>자리에 d3.js 코드를 작성해주세요 -->
+	<script>
+		d3.csv("data.csv", function(data) {
+			// SVG 캔버스 가로 (width), 세로(height) 설정 
+			var width = 500; 
+			var height = 800;
+
+			//SVG 캔버스 그리기 
+			var svg = d3.select("body") // body 요소를 선택(select)
+				.append("svg") // svg를 추가 (append)
+				.attr("width", width) // 가로 길이 설정 (attr) 
+				.attr("height", height); // 세로 길이 설정 (attr)
+
+				svg.selectAll("text") // body에 있는 text 모두 선택 (selectAll)
+					.data(data) // 데이터 불러오기 (data)
+					.enter()  // 데이터 연동 (enter)
+					.append("text")  // text 추가 (append)
+					.attr("x", 20) // text의 x좌표 (attr)
+					.attr("y", function(d,i) {
+						return i * 20+20;
+					}) // text의 y좌표. i는 데이터의 인덱스값(순서값). 
+					.text(function(d){
+						return d.value;
+					}); // text 추가
+		});
+	</script>	
+</body>
+</html>
